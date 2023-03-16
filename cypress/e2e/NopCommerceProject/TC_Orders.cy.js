@@ -7,12 +7,7 @@ describe('Add Orders', ()=>{
 
         cy.fixture('nopcommerce').then((data)=>{
 
-            const lp = new Login()
-
-            lp.visit()
-                lp.setEmailId(data.emailId)
-                    lp.setPassword(data.password)
-                        lp.btnLogin()
+            cy.login(data.emailId, data.password)
 
             let Odr = new manuOrders()
 
