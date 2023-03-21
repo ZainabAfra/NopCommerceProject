@@ -3,6 +3,7 @@
 //import { beforeEach } from "mocha";
 //import { after } from "cypress/types/lodash";
 import Customers from "../../support/PageObjectsPages/customers";
+//var faker = require('faker')
 
 
 describe('Manu Customers', ()=>{
@@ -16,12 +17,13 @@ describe('Manu Customers', ()=>{
         cy.clearLocalStorage()
     })*/
 
-    it('Search Customers', ()=>
+    it.only('Search Customers', ()=>
     {
         cy.fixture('nopcommerce').then((data)=>{
             cy.login(data.emailId,data.password)
             
             let cus = new Customers()
+            
 
             cus.clickCustomers()
                 cus.clickBarCustomers()
@@ -35,10 +37,12 @@ describe('Manu Customers', ()=>{
             
         })
 
-        it.only("AddNewCustomers",()=>
+        it("AddNewCustomers",()=>
         {
             cy.fixture('nopcommerce').then((data)=>{
                 cy.login(data.emailId,data.password)
+
+                //const SearchFName = faker.name.firstname()
                 
                 let cus = new Customers()
 

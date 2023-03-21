@@ -11,7 +11,7 @@
     "enDate": "10/30/2030",
     "Email": "Afkslsl@gmail.com",
     "Semail": "Search@gmail.com",
-    "firsname": "John",
+    "firstname": "John",
     "lastname" : "chris",
     "MonthD" : "10",
     "DayDate" : "16",
@@ -19,8 +19,11 @@
     "PasWod" : "KLJL123",
     "SearchFName": "Mohammed",
     "SearchLName": "Uddin",
-    "DateOfBirth" : "3/16/2023"
+    "DateOfBirth" : "3/16/2023",
+    "name" : "Mohammed"
     
     
     
 }
+
+
