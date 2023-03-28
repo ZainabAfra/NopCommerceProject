@@ -13,6 +13,10 @@ class vendor
     Lname="//input[@id='Address_LastName']"
     AEmail="//input[@id='Address_Email']"
     conutry="//select[@id='Address_CountryId']"
+    state="//select[@id='Address_StateProvinceId']"
+    county="//input[@id='Address_County']"
+    phone="//input[@id='Address_PhoneNumber']"
+    save="//button[@name='save']"
 
     
     //"manuCustomers" click options
@@ -35,6 +39,14 @@ class vendor
                                         entAEmail(Aeml){cy.xpath(this.AEmail).type(Aeml)}
                                             //"Select Country" Select option
                                                 selCountry(){cy.xpath(this.conutry).select('United States').should('have.value','1')}
-}
+                                                    //"Select State/Province" Selecing option 
+                                                        selState(){cy.xpath(this.state).select('Georgia').should('have.value','16')}
+                                                            //"Input County" Input Option 
+                                                                entCounty(cnt){cy.xpath(this.county).type(cnt)}
+                                                                    //"Input Phone Number " input phone number
+                                                                        entPhone(pn){cy.xpath(this.phone).type(pn)}
+                                                                            //"Click save" click option 
+                                                                                clicksave(){cy.xpath(this.save).click()}
+}   
 
 export default vendor
