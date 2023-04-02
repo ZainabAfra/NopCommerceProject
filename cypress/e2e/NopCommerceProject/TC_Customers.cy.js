@@ -8,15 +8,6 @@ import Customers from "../../support/PageObjectsPages/customers";
 
 describe('Manu Customers', ()=>{
 
-    /*before(()=>{
-        Homepage.loadHomePage()
-    })
-
-    after(()=>{
-        cy.clearCookies()
-        cy.clearLocalStorage()
-    })*/
-
     it.only('Search Customers', ()=>
     {
         cy.fixture('nopcommerce').then((data)=>{
@@ -41,10 +32,12 @@ describe('Manu Customers', ()=>{
         {
             cy.fixture('nopcommerce').then((data)=>{
                 cy.login(data.emailId,data.password)
+                cy.log("Login to the application")
 
-                //const SearchFName = faker.name.firstname()
+                
                 
                 let cus = new Customers()
+                cy.log("Entre customers info")
 
                 cus.clickCustomers()
                     cus.clickBarCustomers()
