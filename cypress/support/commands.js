@@ -27,27 +27,26 @@
 /// <reference types="Cypress" />
 
 /// <reference types="cypress-xpath" />
+     import 'cypress-iframe';
+
 
 Cypress.Commands.add("login",(emailId,password) =>{
 
     cy.fixture('nopcommerce').then((data)=>{
 
-    cy.visit("https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F")
+    //cy.visit("https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F")
+    cy.visit(Cypress.config('qaurl'))
     cy.xpath("//*[@id='Email']").clear().type(emailId)
     cy.xpath("//*[@id='Password']").clear().type(password)
     cy.xpath("//button[@type='submit']").click()
     cy.title().should('be.equal','Dashboard / nopCommerce administration')
+    
     //cy.screenshot("Homepage")
 })
 })
 
-
-Cypress.Commands.add("AddNewCategory",()=>{
-
-    catalog="//p[normalize-space()='Catalog']"
-    catgor="//p[normalize-space()='Categories']"
-    addNew="//a[normalize-space()='Add new']"
-    catName="//input[@id='Name']"
-    patcat="//select[@id='ParentCategoryId']"
-
+Cypress.Commands.add("logout",()=>{
+    cy.xpath("//a[normalize-space()='Logout']").click()
 })
+
+
