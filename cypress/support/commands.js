@@ -27,8 +27,8 @@
 /// <reference types="Cypress" />
 
 /// <reference types="cypress-xpath" />
-     import 'cypress-iframe';
-
+///   import 'cypress-iframe';
+    
 
 Cypress.Commands.add("login",(emailId,password) =>{
 
@@ -47,6 +47,7 @@ Cypress.Commands.add("login",(emailId,password) =>{
 
 Cypress.Commands.add("logout",()=>{
     cy.xpath("//a[normalize-space()='Logout']").click()
+    cy.xpath("//strong[normalize-space()='Welcome, please sign in!']").should('be.text','Welcome, please sign in!')
 })
 
 

@@ -13,6 +13,8 @@ class AddNewDiscount
     startDate="//input[@id='StartDateUtc']"
     endDate="//input[@id='EndDateUtc']"
     discountlimit="//select[@id='DiscountLimitationId']"
+    save="//button[@name='save']"
+    
     
 
     //"Menu Promotions" click option
@@ -37,6 +39,11 @@ class AddNewDiscount
                                                                             //"Select Discount Limitation" select option 
                                                                                 selDiscountLimit(){cy.xpath(this.discountlimit)
                                                                                     .select("N times per customer").should('exist')}
+                                                                                        //"Click Save" Click option 
+                                                                                            clickSave(){cy.xpath(this.save).click()
+                                                                                                .should('be.visible','The new discount has been added successfully.')}
+                                                                
+                                                                                                         
 
     
 }

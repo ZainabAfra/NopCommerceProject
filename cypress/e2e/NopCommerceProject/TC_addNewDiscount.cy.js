@@ -13,7 +13,7 @@ describe('Manu Promotions',()=>{
     
 })
     after(function(){
-        //cy.logout()
+        cy.logout()
         cy.log("Log out from the aplication")
 })
 
@@ -34,6 +34,8 @@ describe('Manu Promotions',()=>{
                                         dis.selSDate(this.data.stDate)
                                             dis.selEDate(this.data.enDate)
                                                 dis.selDiscountLimit()
+                                                    dis.clickSave()
+                                                        
                                                     
         })
     })

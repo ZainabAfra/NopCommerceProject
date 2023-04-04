@@ -10,7 +10,8 @@ module.exports = defineConfig({
     //"env":
     qaurl : "https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F",
     stagingUrl : "https://www.",
-    prodUrl : "https://www"
+    prodUrl : "https://www",
+    //reporter: "cypress-mochawesome-reporter"
   
     
   },
