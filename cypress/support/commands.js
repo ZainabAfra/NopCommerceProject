@@ -27,7 +27,7 @@
 /// <reference types="Cypress" />
 
 /// <reference types="cypress-xpath" />
-     import 'cypress-iframe';
+//     import 'cypress-iframe';
 
 
 Cypress.Commands.add("login",(emailId,password) =>{
