@@ -6,7 +6,7 @@ describe('Manu Promations',()=>{
     before(function(){
         cy.fixture('nopcommerce').then(function(data){
             this.data=data
-            cy.login(this.data.emailId,this.data.password)
+            cy.login(this.data.emailId,this.data.password ,{failOnStausCode: false} )
             cy.log("Logged in to the application successfully")
         })
     })
@@ -33,3 +33,5 @@ describe('Manu Promations',()=>{
 
     })
 })
+
+

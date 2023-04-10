@@ -16,19 +16,23 @@
     "cypress-xpath": "^2.0.1",
     "faker": "^5.5.3",
     "reporter": "cypress-mochawesome-reporter",
-    "failOnStatusCode": "false"    
-      
-    
+    "mochawesome": "7.1.3",
+    "mochawesome-merge": "4.3.0",
+    "cypress-file-upload": "5.0.8",
+    "@4tw/cypress-drag-drop": "2.2.3"
+        
   }
 
-  
     
-    
-
-
-    
-
-  
-
-  
 }
+  
+    
+    
+
+
+    
+
+  
+
+  
+

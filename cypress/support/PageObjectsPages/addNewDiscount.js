@@ -42,6 +42,7 @@ class AddNewDiscount
                                                                                         //"Click Save" Click option 
                                                                                             clickSave(){cy.xpath(this.save).click()
                                                                                                 .should('be.visible','The new discount has been added successfully.')}
+                                                                                                
                                                                 
                                                                                                          
 

@@ -28,7 +28,9 @@ class AddNewCampaign
                         //"Input Subject" input option 
                             entSubject(sb){cy.xpath(this.subject).type(sb)}
                                 //"input Body" input option 
-                                    entBody(b){cy.xpath(this.body).type(b)}
+                                    entBody(b){cy.xpath(this.body).type(b)
+                                        .type('{selectall}')}
+                                        
                                         //"input Date" input option 
                                             entPlanDate(pd){cy.xpath(this.plannedDate).type(pd)}
                                                 //"Select Limitied to Store" select option 
@@ -38,7 +40,9 @@ class AddNewCampaign
                                                             selLimitedCustomer(){cy.xpath(this.limitedCustomer)
                                                             .select('Forum Moderators').should('have.value','2')}
                                                                 //"click save" click option 
-                                                                    clicksave(){cy.xpath(this.save).click()}
+                                                                    clicksave(){cy.xpath(this.save).click()
+                                                                        .should('be.visible','The new campaign has been added successfully.')}
+                                                                    
 
 
 

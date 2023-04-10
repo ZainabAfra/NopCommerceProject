@@ -26,14 +26,11 @@
 
 /// <reference types="Cypress" />
 
-/// <reference types="cypress-xpath" />
-<<<<<<< HEAD
-///   import 'cypress-iframe';
-    
-=======
-//     import 'cypress-iframe';
+ /// <reference types="cypress-xpath" />
 
->>>>>>> 2775abfee4c7462baa0a339cbc0e84f92cf4aee3
+ /// require('@4tw/cypress-drag-drop')
+
+    
 
 Cypress.Commands.add("login",(emailId,password) =>{
 
