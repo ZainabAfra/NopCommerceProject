@@ -26,7 +26,13 @@
     "cname": "Panama Beach",
     "Csubject": " Friedns Hangout",
     "CBody": "Ater a long time makeing plan for boys Hangout",
-    "CPlanDate":"05/04/2023"
+    "CPlanDate":"05/04/2023",
+    "Title": " Home Equipment",
+    "ShortDesc" : "Based on kitchen equipment",
+    "FullDescription": "This is a new Item",
+    "Subject" : "Electronic",
+    "Sdate": "04/11/2023",
+    "Edate": "12/31/2025"
 
     
     
