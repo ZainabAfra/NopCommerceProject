@@ -4,19 +4,30 @@ import AddNewCategory from "../../support/PageObjectsPages/addNewCategory";
 
 describe('Add New Categories', ()=>{
 
-    it('Add_Categories',()=>{
+    before(function(){
+        cy.fixture('nopcommerce').then(function(data){
+            this.data=data
+            cy.login(this.data.emailId,this.data.password,{failOnStausCode: false})
+            cy.log("Logged in to the application successfully")
+        })
+    })
 
-        cy.fixture('nopcommerce').then((data)=>{
+    after(function(){
+        cy.logout()
+        cy.log("Logged out from the applicatio successfully")
+    })
 
-            cy.login(data.emailId,data.password)
+    it('Add_Categories',function(){
 
             let AC = new AddNewCategory()
+            cy.log('Entred New Categories info')
 
             AC.clickCatalog()
                 AC.clickCategories()
                     AC.clickAddNew()
-                        AC.entName(data.enName)
-                            AC.selPaCategory()
+                        AC.entName(this.data.enName)
+                            AC.entDescription(this.data.Description)
+                                AC.selPaCategory()
+                                    AC.clickSave()
         })
     })
-})
