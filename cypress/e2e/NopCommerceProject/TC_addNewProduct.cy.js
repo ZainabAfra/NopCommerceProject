@@ -1,34 +1,37 @@
-//import { describe } from "mocha";
-
-import AddNewProduct from "../PageObjectsPages/addNewProduct.cy"
-import Login from "../PageObjectsPages/LoginPage.cy"
+import AddNewProduct from "../../support/PageObjectsPages/addNewProduct"
 
 describe('Add New Products', () =>{
 
-    it('New Products',()=>{
+    before(function() {
+        cy.fixture('nopcommerce').then(function(data){
+            this.data=data
+            cy.login(this.data.emailId,this.data.password)
+            cy.log("Logged in to the application successfully")
+        })
+        
+    })
 
-        //cy.visit("https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F")
+    after(function(){
+        cy.logout()
+        cy.log("Logged out from the application successfully")
+    })
 
-        cy.fixture('nopcommerce').then((data)=>{
+    it('New Products',function(){
 
-            const lp = new Login()
-            lp.visit()
-                lp.setEmailId(data.emailId)
-                    lp.setPassword(data.password)
-                        lp.btnLogin()
-    
-            const ANP = new AddNewProduct()
+            let ANP = new AddNewProduct()
+
             ANP.clickCatalog()
                 ANP.clickProducts()
                     ANP.clickAddNew()
-                        ANP.entProName(data.prodName)
-                            ANP.entShotDesc(data.Desc)
-                                ANP.entsku(data.Sku)
-                                    ANP.selVandor()
-                            ANP.entStDate(data.StDate)
-                                ANP.entEdDate(data.EdDate)
-                                    ANP.clickSave()
-                                        ANP.verifyMgs()
+                        ANP.entProName(this.data.prodName)
+                            ANP.entShotDesc(this.data.Desc)
+                                ANP.entFullDesc(this.data.FullDescripton)
+                                    ANP.entsku(this.data.Sku)
+                                        ANP.selVandor()
+                                             ANP.entStDate(this.data.StDate)
+                                                 ANP.entEdDate(this.data.EdDate)
+                                                     ANP.clickSave()
+                                                        ANP.verifyMgs()
             
 
     
@@ -36,4 +39,3 @@ describe('Add New Products', () =>{
         })
        
     })
-})
