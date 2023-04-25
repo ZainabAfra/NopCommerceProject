@@ -1,6 +1,4 @@
-
 import AddNewCategory from "../../support/PageObjectsPages/addNewCategory";
-
 
 describe('Add New Categories', ()=>{
 
