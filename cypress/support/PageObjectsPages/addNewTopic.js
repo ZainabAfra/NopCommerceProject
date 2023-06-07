@@ -5,7 +5,11 @@ class AddNewTopic
     addNew="//a[normalize-space()='Add new']"
     title="//input[@id='Title']"
     body="//iframe[@id='Body_ifr']"
-
+    display='//*[@id="topic-display"]/div[1]/div[2]/button'
+    published="//input[@id='Published']"
+    includeMenu="//input[@id='IncludeInTopMenu']"
+    save="//button[@name='save']"
+    
 
 
     // "Menu Content management" click option 
@@ -22,6 +26,15 @@ class AddNewTopic
                             let ifraamebody = $iframe.contents().find('body')
                                 cy.wrap(ifraamebody).type(bdy).type('{selectall}')
                         })}
+
+                            // "Display" click option 
+                                clickDisplay(){cy.xpath(this.display).click()}
+                                    //"Published" verification option   
+                                        verifyPublished(){cy.xpath(this.published).should('be.checked')}
+                                            //"Include in top menu" check option 
+                                                clickInclude(){cy.xpath(this.includeMenu).click().should('be.checked')}
+                                                    //"Save button" click option 
+                                                        save(){cy.xpath(this.save).click()}
 
 
 }

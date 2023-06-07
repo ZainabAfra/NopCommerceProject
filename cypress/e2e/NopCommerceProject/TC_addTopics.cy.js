@@ -24,6 +24,9 @@ describe('Add Topics', ()=>{
                 top.clickAddNew()
                     top.entTitle(this.data.Title)
                         top.entBody(this.data.CBody)
+                            top.clickDisplay()
+                                top.verifyPublished()
+                                    top.clickInclude()
 
     })
 })
