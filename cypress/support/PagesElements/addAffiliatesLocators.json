@@ -1,0 +1,11 @@
+{
+    "AddAffiiates": {
+
+    "promotions":"//p[normalize-space()='Promotions']",
+    "affiliates":"//p[normalize-space()='Affiliates']",
+    "addNew":"//a[normalize-space()='Add new']",
+    "firstName":"//input[@id='Address_FirstName']",
+    "lastName":"//input[@id='Address_LastName']"
+
+    }
+}

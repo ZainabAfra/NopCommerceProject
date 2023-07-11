@@ -3,8 +3,8 @@ describe('Add Polls',()=>{
 
     before(function(){
         cy.fixture('nopcommerce').then(function(data){
-            this.data=data
-            cy.login(this.data.emailId,this.data.password)
+            globalThis.data=data
+            cy.login(data.login.emailId,data.login.password)
         })
     })
 
@@ -23,14 +23,14 @@ describe('Add Polls',()=>{
                 po.clickAddNew()
                     po.clickBackToPullList()
                         po.clickAddNew()
-                            po.entName(this.data.PName)
+                            po.entName(data.pollsData.PName)
                                 po.verifyPublished()
                                     po.verifyShowHome()
                                         po.verifyAllowVote()
-                                            po.entSDate(this.data.UtcSdate)
-                                                po.entEDate(this.data.UtcEdate)
+                                            po.entSDate(data.pollsData.UtcSdate)
+                                                po.entEDate(data.pollsData.UtcEdate)
                                                     //po.selLimitedToStores()
-                                                        po.entSystemKeyword(this.data.SystemKeyword)
+                                                        po.entSystemKeyword(data.pollsData.SystemKeyword)
                                                             po.clickSave()
     })
 })

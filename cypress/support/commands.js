@@ -29,7 +29,7 @@
   /// <reference types="cypress-xpath" />
 
  /// require('@4tw/cypress-drag-drop')
-
+/// import 'cypress-file-upload';
     
 
 Cypress.Commands.add("login",(emailId,password) =>{
@@ -42,7 +42,7 @@ Cypress.Commands.add("login",(emailId,password) =>{
     cy.xpath("//*[@id='Password']").clear().type(password)
     cy.xpath("//button[@type='submit']").click()
     cy.title().should('be.equal','Dashboard / nopCommerce administration')
-    
+    //randomEmail = Math.random().toString(36).substring(2,15)+"gmail.com"
     //cy.screenshot("Homepage")
 })
 })

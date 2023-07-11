@@ -1,0 +1,19 @@
+{
+    "AddSalesSummary" : {
+
+    "report":"//p[normalize-space()='Reports']//i[contains(@class,'right fas fa-angle-left')]",
+    "salessummary":"//p[normalize-space()='Sales summary']",
+    "startDate":"//input[@id='StartDate']",
+    "endDate":"//input[@id='EndDate']",
+    "store":"//select[@id='StoreId']",
+    "orderstatus":"//select[@id='OrderStatusId']",
+    "paymentstatus":"//select[@id='PaymentStatusId']",
+    "category":"//select[@id='CategoryId']",
+    "manufacturer":"//select[@id='ManufacturerId']",
+    "billingCountry":"//select[@id='BillingCountryId']",
+    "vendor":"//select[@id='VendorId']",
+    "groupBy":"//select[@id='SearchGroupId']"
+
+
+    }
+}

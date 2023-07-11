@@ -6,7 +6,7 @@ describe('Vendor info',()=>{
     before(function(){
         cy.fixture('nopcommerce').then(function(data){
             this.data=data
-            cy.login(this.data.emailId,this.data.password)
+            cy.login(this.data.login.emailId,this.data.login.password)
             cy.log("Logged in to the application")
         })
     })

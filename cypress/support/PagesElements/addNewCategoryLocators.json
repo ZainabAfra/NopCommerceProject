@@ -1,0 +1,13 @@
+{
+    "AddNewCategory":{
+
+    "catalog":"//p[normalize-space()='Catalog']",
+    "catgor":"//p[normalize-space()='Categories']",
+    "addNew":"//a[normalize-space()='Add new']",
+    "catName":"//input[@id='Name']",
+    "description":"#Description_ifr",
+    "patcat":"//select[@id='ParentCategoryId']",
+    "save":"button[name='save']"
+
+    }
+}

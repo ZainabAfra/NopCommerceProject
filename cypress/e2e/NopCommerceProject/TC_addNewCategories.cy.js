@@ -1,4 +1,4 @@
-import AddNewCategory from "../../support/PageObjectsPages/addNewCategory";
+import {AddNewCategory, addNewCategoryLocators} from "../../support/PagesElements/addNewCategoryLocators.json";
 
 describe('Add New Categories', ()=>{
 
@@ -17,15 +17,15 @@ describe('Add New Categories', ()=>{
 
     it('Add_Categories',function(){
 
-            let AC = new AddNewCategory()
+            let NewCategory = new AddNewCategory
             cy.log('Entred New Categories info')
 
-            AC.clickCatalog()
-                AC.clickCategories()
-                    AC.clickAddNew()
-                        AC.entName(this.data.enName)
-                            AC.entDescription(this.data.Description)
-                                AC.selPaCategory()
-                                    AC.clickSave()
+            NewCategory.clickCatalog()
+            NewCategory.clickCategories()
+            NewCategory.clickAddNew()
+            NewCategory.entName(this.data.enName)
+            NewCategory.entDescription(this.data.Description)
+            NewCategory.selPaCategory()
+            NewCategory.clickSave()
         })
     })
